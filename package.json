@@ -1,0 +1,15 @@
+{
+  "name": "godville",
+  "version": "1.0.0",
+  "description": "godville bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "godville",
+    "bot"
+  ],
+  "author": "Dmitry Demenchuk (dmitry@demenchuk.me)",
+  "license": "ISC"
+}
