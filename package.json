@@ -4,12 +4,15 @@
   "description": "godville bot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "phantomjs index.js"
   },
   "keywords": [
     "godville",
     "bot"
   ],
   "author": "Dmitry Demenchuk (dmitry@demenchuk.me)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "phantomjs": "^2.1.7"
+  }
 }
