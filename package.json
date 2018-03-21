@@ -13,6 +13,7 @@
   "author": "Dmitry Demenchuk (dmitry@demenchuk.me)",
   "license": "ISC",
   "dependencies": {
+    "es6-promise": "^4.2.4",
     "phantomjs": "^2.1.7"
   }
 }
