@@ -1,20 +1,29 @@
 const page = require('webpage').create();
 const Promise = require('es6-promise').Promise;
+const system = require('system');
 
-const openWebsite = function() {
-  const url = 'https://godville.net/';
+const username = system.env.USERNAME;
+const password = system.env.PASSWORD;
 
-  return new Promise(function(resolve, reject) {
-    page.open(url, function(status) {
-      status === 'success' 
-        ? resolve() 
-        : reject(new Error('Problems while opening a website'));
-    });
-  });
+if (!username || !password) {
+  throw 'USERNAME or PASSWORD variables are missing.';
 }
 
-openWebsite().then(function() {
+const openPromise = new Promise(function(resolve, reject) {
+  console.log(':: Open website');
+
+  const data = 'username=' + username + '&password=' + password;
+
+  page.open('https://godville.net/login/login', 'post', data, function(status) {
+    status === 'success' 
+      ? resolve() 
+      : reject(new Error('Problems while opening a website'));
+  });
+});
+
+openPromise.then(function() {
   console.log('All good');
+
   page.render('example.png');
 
   phantom.exit();
